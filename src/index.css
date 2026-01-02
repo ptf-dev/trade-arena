@@ -76,18 +76,46 @@ body::after {
 
 /* Components */
 .glass-card {
-  background: var(--panel-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--panel-border);
-  border-radius: 16px;
+  background: #1a1b1e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.info-box {
+  background: #25262b;
+  border-radius: 8px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
 }
 
 .button-primary {
@@ -155,7 +183,7 @@ body::after {
   display: inline-block;
   white-space: nowrap;
   padding-right: 100%;
-  animation: ticker 30s linear infinite;
+  animation: ticker 60s linear infinite;
   color: var(--primary);
   font-family: var(--font-mono);
   font-size: 0.9rem;
