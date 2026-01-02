@@ -29,7 +29,7 @@ export const CHAMPIONSHIPS = [
         participants: 18,
         timeLabel: 'Starts in',
         timeLeft: '4d 20:17:59',
-        cover: "https://cdn.prod.website-files.com/6744517d5c3f38b0075a477b/67634f19b84a96937e28cd6e_cover_1.jpg",
+        cover: ASSETS.TOURNAMENT_COVER,
         registrationLink: import.meta.env.VITE_LINK_DAY_TRADER_DUEL || 'https://tradingview.com'
     },
     {
@@ -41,7 +41,7 @@ export const CHAMPIONSHIPS = [
         participants: 7,
         timeLabel: 'Starts in',
         timeLeft: '30d 20:17:59',
-        cover: "https://cdn.prod.website-files.com/6744517d5c3f38b0075a477b/67634f195e0329976378e99b_cover_3.jpg",
+        cover: ASSETS.TOURNAMENT_COVER,
         registrationLink: import.meta.env.VITE_LINK_MONTHLY_MOONSHOT || 'https://tradingview.com'
     },
 ];
@@ -55,9 +55,9 @@ export const TOP_TRADERS = [
 ];
 
 export const TICKER_ITEMS = [
+    "NEW MONTHLY CHAMPIONSHIP OPENED: $50K REWARDS! 💰",
+    "NEW SIDE QUEST: 'MOST VOLATILE TRADE OF THE DAY' IS NOW ACTIVE! ⚡",
     "CRYPTOKEV JUST JUMPED 12 SPOTS ON THE LEADERBOARD! 🔥",
     "SATOSHIGHOST COMPLETED A 'HAT TRICK': 3 WINNING TRADES IN A ROW! 🎩",
-    "NEW MONTHLY CHAMPIONSHIP OPENED: $50K REWARDS! 💰",
     "TRADERJOE EARNED THE 'COMEBACK KING' BADGE! 👑",
-    "NEW SIDE QUEST: 'MOST VOLATILE TRADE OF THE DAY' IS NOW ACTIVE! ⚡"
 ];
