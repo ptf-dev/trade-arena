@@ -1,4 +1,4 @@
-# TradeArena MVP Implementation Plan
+# Livetradingleague MVP Implementation Plan
 
 ## Goal
 Build a centralized hub for competitive trading with a "meta-layer" approach, ensuring 100% user autonomy over trading accounts while providing high-energy gamification features.

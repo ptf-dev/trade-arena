@@ -14,10 +14,50 @@ import { motion } from 'framer-motion';
 
 // Mock Data
 const CHAMPIONSHIPS = [
-  { id: 1, title: 'Weekly Alpha', tier: 'Weekly', prize: '$5,000', participants: 450, timeLeft: '2d 4h', manager: 'Admin01', color: 'var(--primary)' },
-  { id: 2, title: 'Moonshot Monthly', tier: 'Monthly', prize: '$25,000', participants: 1200, timeLeft: '14d 8h', manager: 'WhaleWatcher', color: 'var(--secondary)' },
-  { id: 3, title: 'Day Trader Duel', tier: 'Weekly', prize: '$2,500', participants: 180, timeLeft: '5h 22m', manager: 'QuickScalp', color: 'var(--accent)' },
-  { id: 4, title: 'Hedge Fund Hero', tier: 'Bi-Weekly', prize: '$10,000', participants: 85, timeLeft: '6d 12h', manager: 'EliteFund', color: 'var(--info)' },
+  {
+    id: 1,
+    title: 'Weekly Alpha',
+    tier: 'Weekly',
+    prize: '$5,000',
+    participants: 450,
+    timeLeft: '2d 4h',
+    manager: 'Admin01',
+    color: 'var(--primary)',
+    registrationLink: import.meta.env.VITE_LINK_WEEKLY_ALPHA || 'https://tradingview.com'
+  },
+  {
+    id: 2,
+    title: 'Moonshot Monthly',
+    tier: 'Monthly',
+    prize: '$25,000',
+    participants: 1200,
+    timeLeft: '14d 8h',
+    manager: 'WhaleWatcher',
+    color: 'var(--secondary)',
+    registrationLink: import.meta.env.VITE_LINK_MONTHLY_MOONSHOT || 'https://tradingview.com'
+  },
+  {
+    id: 3,
+    title: 'Day Trader Duel',
+    tier: 'Weekly',
+    prize: '$2,500',
+    participants: 180,
+    timeLeft: '5h 22m',
+    manager: 'QuickScalp',
+    color: 'var(--accent)',
+    registrationLink: import.meta.env.VITE_LINK_DAY_TRADER_DUEL || 'https://tradingview.com'
+  },
+  {
+    id: 4,
+    title: 'Hedge Fund Hero',
+    tier: 'Bi-Weekly',
+    prize: '$10,000',
+    participants: 85,
+    timeLeft: '6d 12h',
+    manager: 'EliteFund',
+    color: 'var(--info)',
+    registrationLink: import.meta.env.VITE_LINK_HEDGE_FUND_HERO || 'https://tradingview.com'
+  },
 ];
 
 const TOP_TRADERS = [
@@ -53,7 +93,7 @@ const Navbar = () => (
       <div style={{ padding: '8px', background: 'var(--primary)', borderRadius: '8px' }}>
         <Trophy size={24} color="#000" />
       </div>
-      <span style={{ fontSize: '1.5rem', fontWeight: 800, letterSpacing: '-1px' }}>TRADEARENA</span>
+      <span style={{ fontSize: '1.5rem', fontWeight: 800, letterSpacing: '-1px' }}>LIVETRADINGLEAGUE</span>
     </div>
     <div style={{ display: 'flex', gap: '30px', alignItems: 'center' }}>
       <a href="#" style={{ color: 'var(--text-dim)', textDecoration: 'none', fontWeight: 500 }}>Championships</a>
@@ -165,7 +205,11 @@ const ChampionshipHub = () => {
               </div>
             </div>
 
-            <button className="button-primary" style={{ width: '100%', justifyContent: 'center' }}>
+            <button
+              className="button-primary"
+              style={{ width: '100%', justifyContent: 'center' }}
+              onClick={() => window.open(camp.registrationLink, '_blank')}
+            >
               Register Now <ArrowUpRight size={18} />
             </button>
           </motion.div>
@@ -322,7 +366,7 @@ const Footer = () => (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
           <Trophy size={20} color="var(--primary)" />
-          <span style={{ fontWeight: 800 }}>TRADEARENA</span>
+          <span style={{ fontWeight: 800 }}>LIVETRADINGLEAGUE</span>
         </div>
         <p style={{ color: 'var(--text-muted)', maxWidth: '300px' }}>
           The meta-layer for competitive trading. Decentralized, autonomous, and transparent.
@@ -350,7 +394,7 @@ const Footer = () => (
       </div>
     </div>
     <div style={{ textAlign: 'center', marginTop: '60px', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-      © 2026 TradeArena. All rights reserved. Please trade responsibly.
+      © 2026 Livetradingleague. All rights reserved. Please trade responsibly.
     </div>
   </footer>
 );
