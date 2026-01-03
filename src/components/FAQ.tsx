@@ -12,20 +12,44 @@ interface FAQItemProps {
 const FAQItem = ({ question, answer, isOpen, onClick }: FAQItemProps) => {
     return (
         <div
-            className="border-b border-[rgba(255,255,255,0.05)] last:border-none"
+            style={{
+                borderBottom: '1px solid rgba(255,255,255,0.05)',
+            }}
         >
             <button
                 onClick={onClick}
-                className="w-full py-6 flex items-center justify-between text-left group"
+                style={{
+                    width: '100%',
+                    padding: '24px 0',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    textAlign: 'left',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    color: isOpen ? 'var(--text-main)' : 'var(--text-dim)',
+                    transition: 'color 0.3s ease'
+                }}
             >
-                <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
+                <span style={{ fontSize: '1.1rem', fontWeight: 600 }}>
                     {question}
                 </span>
-                <span className={`ml-4 p-1 rounded-full border transition-all ${isOpen
-                        ? 'border-blue-500/50 bg-blue-500/10 text-blue-500 rotate-45'
-                        : 'border-white/10 text-gray-400 group-hover:border-white/30 group-hover:text-white'
-                    }`}>
-                    {isOpen ? <X size={20} /> : <Plus size={20} />}
+                <span style={{
+                    marginLeft: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    border: isOpen ? '1px solid var(--primary-glow)' : '1px solid rgba(255,255,255,0.1)',
+                    color: isOpen ? 'var(--primary)' : 'var(--text-dim)',
+                    backgroundColor: isOpen ? 'rgba(0, 102, 255, 0.1)' : 'transparent',
+                    transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
+                    transition: 'all 0.3s ease'
+                }}>
+                    {isOpen ? <X size={18} /> : <Plus size={18} />}
                 </span>
             </button>
 
@@ -36,9 +60,14 @@ const FAQItem = ({ question, answer, isOpen, onClick }: FAQItemProps) => {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
+                        style={{ overflow: 'hidden' }}
                     >
-                        <p className="pb-6 text-gray-400 leading-relaxed">
+                        <p style={{
+                            paddingBottom: '24px',
+                            color: 'var(--text-muted)',
+                            lineHeight: 1.6,
+                            fontSize: '1rem'
+                        }}>
                             {answer}
                         </p>
                     </motion.div>
@@ -49,7 +78,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }: FAQItemProps) => {
 };
 
 export default function FAQ() {
-    const [openIndex, setOpenIndex] = useState<number | null>(1); // 2nd item open by default like screenshot
+    const [openIndex, setOpenIndex] = useState<number | null>(1); // 2nd item open by default
 
     const faqs = [
         {
@@ -58,7 +87,7 @@ export default function FAQ() {
         },
         {
             question: "What Is a Trading Challenge?",
-            answer: "The Trading Challenge is an evaluation program designed to help you learn trading and demonstrate your skills on demo accounts. Our challenges are structured with specific rules, allowing us to identify the most skilled traders for our evaluation program. Successful traders will have the opportunity to trade on a demo account with virtual funds and earn rewards based on performance."
+            answer: "The Trading Challenge is an evaluation program designed to help you learn trading and demonstrate your skills on demo accounts. Our challenges are structured with specific rules, allowing us to identify the most skilled traders for our evaluation program."
         },
         {
             question: "What Are the Leverages?",
@@ -75,28 +104,33 @@ export default function FAQ() {
     };
 
     return (
-        <section className="section-container relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        <section className="section-container" style={{ position: 'relative', zIndex: 10 }}>
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                gap: '60px',
+                alignItems: 'start'
+            }}>
                 {/* Left Side: Header */}
-                <div className="lg:col-span-5">
-                    <div className="sticky top-24">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <div>
+                    <div style={{ position: 'sticky', top: '100px' }}>
+                        <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '24px', lineHeight: 1.1 }}>
                             Frequently Asked <br />
                             <span className="text-gradient">Questions</span>
                         </h2>
-                        <p className="text-gray-400 text-lg mb-8 max-w-md">
+                        <p style={{ color: 'var(--text-dim)', fontSize: '1.1rem', marginBottom: '32px', maxWidth: '400px' }}>
                             Something left unanswered? Check out the full FAQs for detailed information about our platform and rules.
                         </p>
-                        <button className="btn-primary group">
+                        <button className="btn-primary">
                             <span>More FAQs</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight size={18} />
                         </button>
                     </div>
                 </div>
 
                 {/* Right Side: Accordion */}
-                <div className="lg:col-span-7">
-                    <div className="glass-panel p-2 md:p-8 rounded-2xl">
+                <div>
+                    <div className="glass-panel" style={{ padding: '32px', borderRadius: '24px' }}>
                         {faqs.map((faq, index) => (
                             <FAQItem
                                 key={index}

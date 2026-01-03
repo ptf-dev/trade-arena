@@ -22,27 +22,22 @@ const features = [
         title: "100% Autonomy",
         description: "Complete control over your trading decisions and account management."
     },
-    {
-        icon: Zap,
-        title: "Zero Stress",
-        description: "Focus on pips, not penalties. No fear of breaking hidden firm rules."
-    },
-    {
-        icon: Globe,
-        title: "Global Leaderboard",
-        description: "Rank publicly based purely on your performance metrics."
-    }
 ];
 
 const KeyFeatures = () => {
     return (
-        <section className="section-container relative z-10 py-20">
-            <div className="text-center mb-16">
+        <section className="section-container" style={{ position: 'relative', zIndex: 10, padding: '80px 24px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-5xl font-bold mb-6"
+                    style={{
+                        fontSize: '3rem',
+                        fontWeight: 800,
+                        marginBottom: '24px',
+                        lineHeight: 1.1
+                    }}
                 >
                     Why Top Traders <br />
                     <span className="text-gradient">Choose The Arena</span>
@@ -52,13 +47,22 @@ const KeyFeatures = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-gray-400 text-lg max-w-2xl mx-auto"
+                    style={{
+                        color: 'var(--text-dim)',
+                        fontSize: '1.2rem',
+                        maxWidth: '600px',
+                        margin: '0 auto'
+                    }}
                 >
                     Experience the freedom of true trading competition. No barriers, just performance.
                 </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '24px'
+            }}>
                 {features.map((feature, index) => (
                     <motion.div
                         key={index}
@@ -66,13 +70,38 @@ const KeyFeatures = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="glass-panel p-8 hover:bg-white/5 transition-colors group cursor-default"
+                        className="glass-panel"
+                        style={{
+                            padding: '32px',
+                            transition: 'var(--transition-smooth)',
+                            cursor: 'default'
+                        }}
                     >
-                        <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <feature.icon className="w-7 h-7 text-[#0066FF]" />
+                        <div style={{
+                            width: '56px',
+                            height: '56px',
+                            borderRadius: '16px',
+                            background: 'rgba(0, 102, 255, 0.1)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginBottom: '24px',
+                            color: 'var(--primary)'
+                        }}>
+                            <feature.icon size={28} />
                         </div>
-                        <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#0066FF] transition-colors">{feature.title}</h3>
-                        <p className="text-gray-400 leading-relaxed">
+                        <h3 style={{
+                            fontSize: '1.25rem',
+                            fontWeight: 700,
+                            marginBottom: '12px',
+                            color: 'var(--text-main)'
+                        }}>
+                            {feature.title}
+                        </h3>
+                        <p style={{
+                            color: 'var(--text-dim)',
+                            lineHeight: 1.6
+                        }}>
                             {feature.description}
                         </p>
                     </motion.div>
