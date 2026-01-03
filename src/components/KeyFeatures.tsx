@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Wallet, Unlock, Brain, Crown, Zap, Globe } from 'lucide-react';
+import { Wallet, Unlock, Brain, Crown } from 'lucide-react';
 
 const features = [
     {
