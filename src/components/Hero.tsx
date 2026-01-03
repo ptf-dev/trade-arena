@@ -8,8 +8,8 @@ const Hero = () => {
             <div className="bg-glow-top"></div>
             <div className="bg-grid"></div>
 
-            <div className="section-container" style={{ paddingTop: '160px', paddingBottom: '120px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '80px' }}>
+            <div className="section-container" style={{ paddingTop: '120px', paddingBottom: '50px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '60px' }}>
                     <div style={{ flex: 1 }}>
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -23,7 +23,7 @@ const Hero = () => {
                                 letterSpacing: '0.2em',
                                 fontSize: '0.8rem',
                                 display: 'block',
-                                marginBottom: '20px'
+                                marginBottom: '16px'
                             }}>
                                 The Future of Competitive Trading
                             </span>
@@ -35,10 +35,10 @@ const Hero = () => {
                             <p style={{
                                 color: 'var(--text-dim)',
                                 fontSize: '1.25rem',
-                                marginTop: '32px',
-                                marginBottom: '48px',
+                                marginTop: '24px',
+                                marginBottom: '32px',
                                 maxWidth: '540px',
-                                lineHeight: 1.6
+                                lineHeight: 1.5
                             }}>
                                 Join global tournaments, prove your dominance, and earn rewards. The ultimate meta-layer for decentralized trading excellence.
                             </p>

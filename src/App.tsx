@@ -5,7 +5,9 @@ import { AnimatePresence } from 'framer-motion';
 import Ticker from './components/Ticker';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import StatsBar from './components/StatsBar';
 import ChampionshipHub from './components/ChampionshipHub';
+import HowItWorks from './components/HowItWorks';
 import TheGoal from './components/TheGoal';
 import Leaderboard from './components/Leaderboard';
 import Footer from './components/Footer';
@@ -21,7 +23,9 @@ export default function App() {
 
       <main>
         <Hero />
+        <StatsBar />
         <ChampionshipHub />
+        <HowItWorks />
         <TheGoal />
         <Leaderboard />
       </main>
