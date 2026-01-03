@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Users, ArrowUpRight } from 'lucide-react';
+import { Users, ArrowUpRight } from 'lucide-react';
 import { CHAMPIONSHIPS } from '../constants';
 
 const ChampionshipHub = () => {
@@ -56,7 +56,7 @@ const ChampionshipHub = () => {
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '24px' }}>
                     <AnimatePresence mode="popLayout">
-                        {CHAMPIONSHIPS.filter(c => c.tier === activeTab).map((camp, i) => (
+                        {CHAMPIONSHIPS.filter(c => c.tier === activeTab).map((camp) => (
                             <motion.div
                                 key={camp.id}
                                 layout
